@@ -12,6 +12,7 @@
 		DDBC32841FBF82EA00F77942 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBC32831FBF82EA00F77942 /* GenerateThumbnailForURL.m */; };
 		DDBC32861FBF82EA00F77942 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBC32851FBF82EA00F77942 /* GeneratePreviewForURL.m */; };
 		DDBC32881FBF82EA00F77942 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DDBC32871FBF82EA00F77942 /* main.c */; };
+		DDC06B6C1FC21A93008F9E8B /* CreateSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC06B6B1FC21A93008F9E8B /* CreateSnapshot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,8 @@
 		DDBC32851FBF82EA00F77942 /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		DDBC32871FBF82EA00F77942 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		DDBC32891FBF82EA00F77942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDC06B6B1FC21A93008F9E8B /* CreateSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateSnapshot.m; sourceTree = "<group>"; };
+		DDC06B6D1FC21D15008F9E8B /* CreateSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateSnapshot.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,8 @@
 		DDBC32821FBF82EA00F77942 /* GLTFQuickLook */ = {
 			isa = PBXGroup;
 			children = (
+				DDC06B6D1FC21D15008F9E8B /* CreateSnapshot.h */,
+				DDC06B6B1FC21A93008F9E8B /* CreateSnapshot.m */,
 				DDBC32831FBF82EA00F77942 /* GenerateThumbnailForURL.m */,
 				DDBC32851FBF82EA00F77942 /* GeneratePreviewForURL.m */,
 				DDBC32871FBF82EA00F77942 /* main.c */,
@@ -153,6 +158,7 @@
 				DDBC32841FBF82EA00F77942 /* GenerateThumbnailForURL.m in Sources */,
 				DDBC32861FBF82EA00F77942 /* GeneratePreviewForURL.m in Sources */,
 				DDBC32881FBF82EA00F77942 /* main.c in Sources */,
+				DDC06B6C1FC21A93008F9E8B /* CreateSnapshot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

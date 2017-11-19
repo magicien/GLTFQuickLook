@@ -2,6 +2,8 @@
 #include <CoreServices/CoreServices.h>
 #include <QuickLook/QuickLook.h>
 
+#include "CreateSnapshot.h"
+
 OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize);
 void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbnail);
 
@@ -13,8 +15,28 @@ void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbn
 
 OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize)
 {
-    // To complete your generator please implement the function GenerateThumbnailForURL in GenerateThumbnailForURL.c
-    return noErr;
+    @autoreleasepool {
+        NSRect rect = {0, 0, maxSize.width, maxSize.height};
+        NSImage *snapshot = CreateSnapshot((__bridge NSURL*)url, rect);
+
+        CGContextRef cgContext = QLThumbnailRequestCreateContext(thumbnail, rect.size, false, options);
+        if(cgContext){
+            NSGraphicsContext *context = [NSGraphicsContext graphicsContextWithGraphicsPort:cgContext flipped:true];
+            
+            if(context){
+                [NSGraphicsContext saveGraphicsState];
+                [NSGraphicsContext setCurrentContext:context];
+                
+                [snapshot drawInRect:rect fromRect:rect operation:NSCompositingOperationSourceOver fraction:1.0];
+                [NSGraphicsContext restoreGraphicsState];
+            }
+            QLThumbnailRequestFlushContext(thumbnail, cgContext);
+            CFRelease(cgContext);
+        } else {
+            return 1;
+        }
+        return noErr;
+    }
 }
 
 void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbnail)
