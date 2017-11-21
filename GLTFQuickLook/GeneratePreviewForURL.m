@@ -16,25 +16,14 @@ void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options)
 {
     @autoreleasepool {
-        NSRect rect = {0, 0, 800, 800};
-        NSImage *snapshot = CreateSnapshot((__bridge NSURL*)url, rect);
+        GLTFSceneSource *source = [[GLTFSceneSource alloc] initWithURL:(__bridge NSURL*)url options:nil];
+        SCNScene *scene = [source sceneWithOptions:nil error:nil];
 
-        CGContextRef cgContext = QLPreviewRequestCreateContext(preview, rect.size, false, options);
-        if(cgContext){
-            NSGraphicsContext *context = [NSGraphicsContext graphicsContextWithGraphicsPort:cgContext flipped:true];
-            
-            if(context){
-                [NSGraphicsContext saveGraphicsState];
-                [NSGraphicsContext setCurrentContext:context];
-                
-                [snapshot drawInRect:rect fromRect:rect operation:NSCompositingOperationSourceOver fraction:1.0];
-                [NSGraphicsContext restoreGraphicsState];
-            }
-            QLPreviewRequestFlushContext(preview, cgContext);
-            CFRelease(cgContext);
-        } else {
-            return 1;
-        }
+        NSData *scnData = [NSKeyedArchiver archivedDataWithRootObject:scene];
+        CFStringRef contentTypeUTI = CFSTR("com.apple.scenekit.scene");
+        
+        QLPreviewRequestSetDataRepresentation(preview, (__bridge CFDataRef)(scnData), contentTypeUTI, options);
+        
         return noErr;
     }
 }
