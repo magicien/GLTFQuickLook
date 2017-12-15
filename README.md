@@ -21,6 +21,16 @@ macOS QuickLook plugin for glTF files. (.gltf/.glb)
 2. Put **GLTFQuickLook.qlgenerator** (in the zip file) into `/Library/QuickLook` (for all users) or `~/Library/QuickLook` (only for the logged-in user).
 3. Run `qlmanage -r` command to reload QuickLook plugins.
 
-### See also
+## Build
 
-- [GLTFSceneKit](https://github.com/magicien/GLTFSceneKit/)
+It needs to install [Carthage](https://github.com/Carthage/Carthage) to get frameworks.
+```
+$ git clone https://github.com/magicien/GLTFQuickLook.git
+$ cd GLTFQuickLook
+$ carthage bootstrap --platform mac
+$ xcodebuild
+```
+
+## See also
+
+- [GLTFSceneKit](https://github.com/magicien/GLTFSceneKit/) - glTF loader for SceneKit
