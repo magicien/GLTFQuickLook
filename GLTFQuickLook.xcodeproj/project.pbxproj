@@ -7,16 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD7CAED31FBFFB2200AC22D2 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7CAED21FBFFB2200AC22D2 /* GLTFSceneKit.framework */; };
-		DD7CAED41FBFFCAE00AC22D2 /* GLTFSceneKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = DD7CAED21FBFFB2200AC22D2 /* GLTFSceneKit.framework */; };
+		DDA257151FE30CBF00F26743 /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA257141FE30CBE00F26743 /* GLTFSceneKit.framework */; };
+		DDA2571A1FE30D6600F26743 /* GLTFSceneKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = DDA257191FE30D6600F26743 /* GLTFSceneKit.framework.dSYM */; };
+		DDA2571D1FE30D8D00F26743 /* GLTFSceneKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DDA2571C1FE30D8D00F26743 /* GLTFSceneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DDBC32841FBF82EA00F77942 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBC32831FBF82EA00F77942 /* GenerateThumbnailForURL.m */; };
 		DDBC32861FBF82EA00F77942 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBC32851FBF82EA00F77942 /* GeneratePreviewForURL.m */; };
 		DDBC32881FBF82EA00F77942 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DDBC32871FBF82EA00F77942 /* main.c */; };
 		DDC06B6C1FC21A93008F9E8B /* CreateSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC06B6B1FC21A93008F9E8B /* CreateSnapshot.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DDA257181FE30D5200F26743 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				DDA2571A1FE30D6600F26743 /* GLTFSceneKit.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA2571B1FE30D7200F26743 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DDA2571D1FE30D8D00F26743 /* GLTFSceneKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		DD7CAED21FBFFB2200AC22D2 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GLTFSceneKit.framework; sourceTree = "<group>"; };
+		DDA257141FE30CBE00F26743 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLTFSceneKit.framework; path = Carthage/Build/Mac/GLTFSceneKit.framework; sourceTree = "<group>"; };
+		DDA257191FE30D6600F26743 /* GLTFSceneKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = GLTFSceneKit.framework.dSYM; path = Carthage/Build/Mac/GLTFSceneKit.framework.dSYM; sourceTree = "<group>"; };
+		DDA2571C1FE30D8D00F26743 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLTFSceneKit.framework; path = Carthage/Build/Mac/GLTFSceneKit.framework; sourceTree = "<group>"; };
 		DDBC32801FBF82EA00F77942 /* GLTFQuickLook.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLTFQuickLook.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBC32831FBF82EA00F77942 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		DDBC32851FBF82EA00F77942 /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
@@ -31,19 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD7CAED31FBFFB2200AC22D2 /* GLTFSceneKit.framework in Frameworks */,
+				DDA257151FE30CBF00F26743 /* GLTFSceneKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DDA257131FE30CBE00F26743 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDA257141FE30CBE00F26743 /* GLTFSceneKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDA2571E1FE30E1100F26743 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDA2571C1FE30D8D00F26743 /* GLTFSceneKit.framework */,
+				DDA257191FE30D6600F26743 /* GLTFSceneKit.framework.dSYM */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DDBC32761FBF82EA00F77942 = {
 			isa = PBXGroup;
 			children = (
-				DDBC328F1FBF830600F77942 /* Frameworks */,
+				DDA2571E1FE30E1100F26743 /* Frameworks */,
 				DDBC32821FBF82EA00F77942 /* GLTFQuickLook */,
 				DDBC32811FBF82EA00F77942 /* Products */,
+				DDA257131FE30CBE00F26743 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,14 +112,6 @@
 			path = GLTFQuickLook;
 			sourceTree = "<group>";
 		};
-		DDBC328F1FBF830600F77942 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DD7CAED21FBFFB2200AC22D2 /* GLTFSceneKit.framework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -97,6 +133,8 @@
 				DDBC327C1FBF82EA00F77942 /* Frameworks */,
 				DDBC327D1FBF82EA00F77942 /* Headers */,
 				DDBC327E1FBF82EA00F77942 /* Resources */,
+				DDA257181FE30D5200F26743 /* CopyFiles */,
+				DDA2571B1FE30D7200F26743 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -144,7 +182,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD7CAED41FBFFCAE00AC22D2 /* GLTFSceneKit.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,11 +314,11 @@
 				DEVELOPMENT_TEAM = EF37D6UQZ9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = GLTFQuickLook/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/ @loader_path/../Resources/";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.0spec.GLTFQuickLook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
@@ -297,11 +334,11 @@
 				DEVELOPMENT_TEAM = EF37D6UQZ9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = GLTFQuickLook/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/ @loader_path/../Resources/";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.0spec.GLTFQuickLook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;

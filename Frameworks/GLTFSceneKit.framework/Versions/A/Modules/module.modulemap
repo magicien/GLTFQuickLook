@@ -1,4 +1,0 @@
-framework module GLTFSceneKit {
-    header "GLTFSceneKit-Swift.h"
-    requires objc
-}
