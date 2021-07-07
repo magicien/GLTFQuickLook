@@ -13,13 +13,15 @@ macOS QuickLook plugin for glTF files. (.gltf/.glb)
 
 ### Using [Homebrew Cask](https://github.com/phinze/homebrew-cask)
 
-- Run `brew cask install gltfquicklook`
+- Run `brew install gltfquicklook`
+- Run `xattr -r -d com.apple.quarantine ~/Library/QuickLook/GLTFQuickLook.qlgenerator` to allow GLTFQuickLook.qlgenerator to run.
 
 ### Manually
 
 1. Download **GLTFQuickLook_vX.X.X.zip** from [Releases](https://github.com/magicien/GLTFQuickLook/releases/latest).
 2. Put **GLTFQuickLook.qlgenerator** (in the zip file) into `/Library/QuickLook` (for all users) or `~/Library/QuickLook` (only for the logged-in user).
-3. Run `qlmanage -r` command to reload QuickLook plugins.
+3. Run `sudo xattr -r -d com.apple.quarantine /Library/QuickLook/GLTFQuickLook.qlgenerator` or `xattr -r -d com.apple.quarantine ~/Library/QuickLook/GLTFQuickLook.qlgenerator` to allow GLTFQuickLook.qlgenerator to run.
+4. Run `qlmanage -r` command to reload QuickLook plugins.
 
 ## Build
 
