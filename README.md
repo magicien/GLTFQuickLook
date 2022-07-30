@@ -15,6 +15,7 @@ macOS QuickLook plugin for glTF files. (.gltf/.glb)
 
 - Run `brew install gltfquicklook`
 - Run `xattr -r -d com.apple.quarantine ~/Library/QuickLook/GLTFQuickLook.qlgenerator` to allow GLTFQuickLook.qlgenerator to run.
+- Relaunch Finder (command + option + esc) -> click 'Finder' -> Relaunch
 
 ### Manually
 
